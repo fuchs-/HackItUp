@@ -11,4 +11,9 @@ public class TaskbarController : MonoBehaviour
     {
         Debug.Log("Console Button was pressed");
     }
+
+    public void BtnClockPressed()
+    {
+        Debug.Log("Clock was Pressed");
+    }
 }
