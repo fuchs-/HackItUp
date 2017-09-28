@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\ClockController.cs" />
     <Compile Include="Assets\Scripts\DragNDropHandler.cs" />
     <Compile Include="Assets\Scripts\TaskbarController.cs" />
+    <Compile Include="Assets\Scripts\TitleBarController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

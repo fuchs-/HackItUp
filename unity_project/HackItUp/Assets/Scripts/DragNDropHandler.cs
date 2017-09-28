@@ -4,16 +4,34 @@ using UnityEngine.EventSystems;
 
 public class DragNDropHandler : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    bool isDragging;
-    Vector3 lastPosition;
+    public GameObject go;
+    bool isDragging = false;
+    Vector3 mouse, delta;
+
+    private void FixedUpdate()
+    {
+        if (isDragging)
+        {
+            mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mouse.z = 0;
+            go.transform.position = mouse - delta;
+        }
+    }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        throw new NotImplementedException();
+        mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        delta = Vector3.zero;
+        delta.x = mouse.x - go.transform.position.x;
+        delta.y = mouse.y - go.transform.position.y;
+
+        isDragging = true;
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        throw new NotImplementedException();
+        delta = Vector3.zero;
+        isDragging = false;
     }
 }
