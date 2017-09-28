@@ -33,7 +33,8 @@ public class ConsoleApp : MonoBehaviour, IPointerClickHandler
     //Writes to the console output
     public void Write(string output)
     {
-        consoleOutput.text += output + "\n";
+        if (string.IsNullOrEmpty(output)) return;
+        consoleOutput.text += "\n" + output;
     }
 
     //Gives focus to the console input field
