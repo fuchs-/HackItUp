@@ -3,36 +3,46 @@ using UnityEngine.UI;
 
 public class AppController : MonoBehaviour
 {
-    RectTransform rt;
     GameObject titleBar;
-    string appName;
+    GameObject workspace;
+
+    RectTransform rt;
+    public string appName;
+
+    bool isMaximized = false;
+    Vector2 normalSizeMin, normalSizeMax;
+    
 
     private void Awake()
-    {
-        this.Initialize();
-    }
-
-    protected void Initialize()
     {
         rt = gameObject.GetComponent<RectTransform>();
 
         titleBar = transform.FindChild("TitleBar").gameObject;
+        workspace = transform.FindChild("AppWorkspace").gameObject;
 
         titleBar.transform.FindChild("btnMaximize").GetComponent<Button>().onClick.AddListener(Maximize);
         titleBar.transform.FindChild("btnClose").GetComponent<Button>().onClick.AddListener(CloseThisApp);
-    }
 
-    protected void ChangeAppName(string newName)
-    {
-        appName = newName;
-        GetComponentInChildren<TitleBarController>().txtAppName.text = newName;
-    }
+        normalSizeMin = rt.offsetMin;
+        normalSizeMax = rt.offsetMax;
+
+        GetComponentInChildren<TitleBarController>().txtAppName.text = appName;
+    }    
 
     public void Maximize()
     {
-        Vector2 v = Vector2.zero;
-        rt.offsetMin = v;
-        rt.offsetMax = v;
+        if (!isMaximized)
+        {
+            rt.offsetMin = Vector2.zero;
+            rt.offsetMax = Vector2.zero;
+            isMaximized = true;
+        }
+        else
+        {
+            rt.offsetMin = normalSizeMin;
+            rt.offsetMax = normalSizeMax;
+            isMaximized = false;
+        }
     }
 
     public void CloseThisApp()
