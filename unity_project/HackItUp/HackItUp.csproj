@@ -80,6 +80,9 @@
     <Compile Include="Assets\Scripts\Apps\Console\ConsoleEngine.cs" />
     <Compile Include="Assets\Scripts\ComputerController.cs" />
     <Compile Include="Assets\Scripts\Core\Computer.cs" />
+    <Compile Include="Assets\Scripts\Core\Drive.cs" />
+    <Compile Include="Assets\Scripts\Core\FileSystem.cs" />
+    <Compile Include="Assets\Scripts\Core\Folder.cs" />
     <Compile Include="Assets\Scripts\WindowSystem\ClockController.cs" />
     <Compile Include="Assets\Scripts\WindowSystem\DragNDropHandler.cs" />
     <Compile Include="Assets\Scripts\WindowSystem\TaskbarController.cs" />
