@@ -11,7 +11,6 @@ public class AppController : MonoBehaviour
 
     bool isMaximized = false;
     public Vector2 normalSizeMin, normalSizeMax;
-    
 
     private void Awake()
     {
@@ -21,7 +20,7 @@ public class AppController : MonoBehaviour
         workspace = transform.FindChild("AppWorkspace").gameObject;
 
         titleBar.transform.FindChild("btnMaximize").GetComponent<Button>().onClick.AddListener(Maximize);
-        titleBar.transform.FindChild("btnClose").GetComponent<Button>().onClick.AddListener(CloseThisApp);
+        titleBar.transform.FindChild("btnClose").GetComponent<Button>().onClick.AddListener(Close);
 
         normalSizeMin = new Vector2(205, 112);
         normalSizeMax = new Vector2(-205, -112);
@@ -49,7 +48,7 @@ public class AppController : MonoBehaviour
         }
     }
 
-    public void CloseThisApp()
+    public void Close()
     {
         Destroy(this.gameObject);
     }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//This class represents the player's computer in the game
+//This class controlles the localhost in the game
 public class ComputerController : MonoBehaviour
 {
     //Closes the game

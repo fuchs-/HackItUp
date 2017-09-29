@@ -5,8 +5,13 @@ using System;
 
 public class ConsoleApp : MonoBehaviour, IPointerClickHandler
 {
-    public Text consoleOutput;
-    public InputField consoleInput;
+
+    public AppController appController;
+
+    Text consoleOutput;
+    InputField consoleInput;
+
+    private ConsoleEngine engine;
 
     private void Awake()
     {
@@ -14,6 +19,18 @@ public class ConsoleApp : MonoBehaviour, IPointerClickHandler
         consoleInput = GetComponentInChildren<InputField>();
 
         consoleInput.onEndEdit.AddListener(ConsoleSubmitInput);
+
+        engine = new ConsoleEngine(this);
+    }
+
+    private void OnDestroy()
+    {
+        
+        consoleInput.onEndEdit.RemoveListener(ConsoleSubmitInput);
+        consoleOutput = null;
+        consoleInput = null;
+
+        engine = null;
     }
 
     private void Start()
@@ -26,8 +43,7 @@ public class ConsoleApp : MonoBehaviour, IPointerClickHandler
     {
         consoleInput.text = string.Empty;
         GiveFocus();
-        Write(input);
-
+        engine.SubmitCommandLine(input);
     }
 
     //Writes to the console output
