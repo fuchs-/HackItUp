@@ -10,7 +10,7 @@ public class AppController : MonoBehaviour
     public string appName;
 
     bool isMaximized = false;
-    Vector2 normalSizeMin, normalSizeMax;
+    public Vector2 normalSizeMin, normalSizeMax;
     
 
     private void Awake()
@@ -23,8 +23,12 @@ public class AppController : MonoBehaviour
         titleBar.transform.FindChild("btnMaximize").GetComponent<Button>().onClick.AddListener(Maximize);
         titleBar.transform.FindChild("btnClose").GetComponent<Button>().onClick.AddListener(CloseThisApp);
 
-        normalSizeMin = rt.offsetMin;
-        normalSizeMax = rt.offsetMax;
+        normalSizeMin = new Vector2(205, 112);
+        normalSizeMax = new Vector2(-205, -112);
+
+        transform.localScale = new Vector3(1, 1, 1);
+        rt.offsetMin = normalSizeMin;
+        rt.offsetMax = normalSizeMax;
 
         GetComponentInChildren<TitleBarController>().txtAppName.text = appName;
     }    
