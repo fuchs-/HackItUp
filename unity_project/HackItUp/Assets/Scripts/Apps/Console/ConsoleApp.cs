@@ -49,7 +49,6 @@ public class ConsoleApp : MonoBehaviour, IPointerClickHandler
     //Writes to the console output
     public void Write(string output)
     {
-        if (string.IsNullOrEmpty(output)) return;
         consoleOutput.text += "\n" + output;
     }
 

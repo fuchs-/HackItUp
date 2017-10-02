@@ -16,6 +16,8 @@ public class ConsoleEngine : MonoBehaviour
 
     public void SubmitCommandLine(string line)
     {
+        if (string.IsNullOrEmpty(line)) return;
+
         if (line == "exit") app.appController.Close();
         app.Write(line);
     }
