@@ -1,11 +1,17 @@
+using UnityEngine;
 
 //This class represents a basic computer in the game
-public class Computer
+public class Computer : MonoBehaviour
 {
     public FileSystem fileSystem;
 
-    public Computer()
+    public void Awake()
     {
         fileSystem = new FileSystem(this);
+    }
+
+    public void OnDestroy()
+    {
+        fileSystem = null;
     }
 }

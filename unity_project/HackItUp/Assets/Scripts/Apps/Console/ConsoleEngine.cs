@@ -1,11 +1,17 @@
+using UnityEngine;
 
-public class ConsoleEngine
+public class ConsoleEngine : MonoBehaviour
 {
     private ConsoleApp app;
 
-    public ConsoleEngine(ConsoleApp app)
+    private void Awake()
     {
-        this.app = app;
+        app = GetComponent<ConsoleApp>();
+    }
+
+    private void OnDestroy()
+    {
+        app = null;
     }
 
     public void SubmitCommandLine(string line)

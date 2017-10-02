@@ -20,7 +20,7 @@ public class ConsoleApp : MonoBehaviour, IPointerClickHandler
 
         consoleInput.onEndEdit.AddListener(ConsoleSubmitInput);
 
-        engine = new ConsoleEngine(this);
+        engine = GetComponent<ConsoleEngine>();
     }
 
     private void OnDestroy()
