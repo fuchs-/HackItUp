@@ -8,8 +8,8 @@ public class ConsoleApp : MonoBehaviour, IPointerClickHandler
 
     public AppController appController;
 
-    Text consoleOutput;
-    InputField consoleInput;
+    public Text consoleOutput;
+    public InputField consoleInput;
 
     private ConsoleEngine engine;
 

@@ -8,6 +8,8 @@ public class ComputerController : MonoBehaviour
     private void Awake()
     {
         playerComputer = GetComponent<Computer>();
+        playerComputer.setName();
+        playerComputer.username = "Fuchs_";     //Temporary
     }
 
     private void OnDestroy()

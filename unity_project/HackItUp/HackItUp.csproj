@@ -80,7 +80,17 @@
     <Compile Include="Assets\Scripts\Apps\Console\ConsoleEngine.cs" />
     <Compile Include="Assets\Scripts\ComputerController.cs" />
     <Compile Include="Assets\Scripts\Core\Computer.cs" />
+    <Compile Include="Assets\Scripts\Core\ComputerNameGenerator.cs" />
+    <Compile Include="Assets\Scripts\Core\Console\ConsoleProgram.cs" />
+    <Compile Include="Assets\Scripts\Core\Console\Console_Clear.cs" />
+    <Compile Include="Assets\Scripts\Core\Console\Console_Exit.cs" />
+    <Compile Include="Assets\Scripts\Core\Console\Console_Help.cs" />
+    <Compile Include="Assets\Scripts\Core\Console\Console_LS.cs" />
+    <Compile Include="Assets\Scripts\Core\Console\Console_MKDir.cs" />
+    <Compile Include="Assets\Scripts\Core\Console\Console_PWD.cs" />
+    <Compile Include="Assets\Scripts\Core\Console\Console_whoami.cs" />
     <Compile Include="Assets\Scripts\Core\Drive.cs" />
+    <Compile Include="Assets\Scripts\Core\File.cs" />
     <Compile Include="Assets\Scripts\Core\FileSystem.cs" />
     <Compile Include="Assets\Scripts\Core\Folder.cs" />
     <Compile Include="Assets\Scripts\WindowSystem\ClockController.cs" />
