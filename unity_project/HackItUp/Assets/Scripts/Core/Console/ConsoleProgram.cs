@@ -7,6 +7,6 @@ public abstract class ConsoleProgram : ScriptableObject
 
     public string[] aliases;
 
-    public abstract bool Execute(ConsoleEngine engine, string[] args);
+    public abstract bool Execute(ConsoleEngine console, string[] args);
 
 }

@@ -52,6 +52,9 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Advertisements.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -66,6 +69,9 @@
     </Reference>
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VR">
       <HintPath>Library\UnityAssemblies\UnityEngine.VR.dll</HintPath>
@@ -82,6 +88,7 @@
     <Compile Include="Assets\Scripts\Core\Computer.cs" />
     <Compile Include="Assets\Scripts\Core\ComputerNameGenerator.cs" />
     <Compile Include="Assets\Scripts\Core\Console\ConsoleProgram.cs" />
+    <Compile Include="Assets\Scripts\Core\Console\Console_CD.cs" />
     <Compile Include="Assets\Scripts\Core\Console\Console_Clear.cs" />
     <Compile Include="Assets\Scripts\Core\Console\Console_Exit.cs" />
     <Compile Include="Assets\Scripts\Core\Console\Console_Help.cs" />
@@ -93,6 +100,7 @@
     <Compile Include="Assets\Scripts\Core\File.cs" />
     <Compile Include="Assets\Scripts\Core\FileSystem.cs" />
     <Compile Include="Assets\Scripts\Core\Folder.cs" />
+    <Compile Include="Assets\Scripts\Initializer.cs" />
     <Compile Include="Assets\Scripts\WindowSystem\ClockController.cs" />
     <Compile Include="Assets\Scripts\WindowSystem\DragNDropHandler.cs" />
     <Compile Include="Assets\Scripts\WindowSystem\TaskbarController.cs" />

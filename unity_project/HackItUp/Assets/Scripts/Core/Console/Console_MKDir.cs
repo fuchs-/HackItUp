@@ -4,29 +4,37 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "HackItUp/ConsolePrograms/MKDir")]
 public class Console_MKDir : ConsoleProgram
 {
-    public override bool Execute(ConsoleEngine engine, string[] args)
+    public override bool Execute(ConsoleEngine console, string[] args)
     {
         string dirName;
 
         if (args.GetLength(0) < 2)
         {
-            engine.app.Write("Missing argument: directory name");
+            console.app.Write("Missing argument: directory name");
 
             return false;
         }
 
         dirName = args[1];
 
-        if (engine.currentFolder.containsSubFolderWithName(dirName))
+        if (console.CurrentFolder.containsSubFolderWithName(dirName))
         {
-            engine.app.Write("There's already a folder with this name here");
-
+            console.Write("There's already a folder with this name here");
             return false;
         }
 
-        engine.currentFolder.createSubFolderWithName(dirName);
+        foreach (string n in Folder.invalidNames)
+        {
+            if (dirName == n)
+            {
+                console.Write("Invalid directory name");
+                return false;
+            }
+        }
 
-        engine.app.Write("\n");
+        console.CurrentFolder.createSubFolderWithName(dirName);
+
+        console.app.Write("\n");
 
         return true;
     }

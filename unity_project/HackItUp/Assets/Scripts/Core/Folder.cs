@@ -3,6 +3,13 @@ using System.Collections.Generic;
 
 public class Folder
 {
+    #region static
+
+    //Initializer
+    public static List<string> invalidNames;
+
+    #endregion
+
     #region Properties
 
     public Drive drive;
@@ -60,6 +67,7 @@ public class Folder
         while (!current.isRoot)
         {
             ret = "/" + current.folderName + ret;
+            current = current.parentFolder;
         }
 
         ret = this.drive.letter.ToString() + ":" + ret;
@@ -84,6 +92,19 @@ public class Folder
 
         ret = new Folder(name, this);
         subFolders.Add(ret);
+
+        return ret;
+    }
+
+    //returns null if there's no subfolder with the provided name
+    public Folder getSubFolderWithName(string name)
+    {
+        Folder ret = null;
+
+        foreach (Folder f in subFolders)
+        {
+            if (f.folderName == name) ret = f;
+        }
 
         return ret;
     }

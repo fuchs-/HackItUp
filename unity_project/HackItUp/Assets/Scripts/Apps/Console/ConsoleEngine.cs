@@ -6,7 +6,13 @@ public class ConsoleEngine : MonoBehaviour
     public ConsoleApp app;
 
     public FileSystem fileSystem;
-    public Folder currentFolder;
+
+    private Folder currentFolder;
+    public Folder CurrentFolder
+    {
+        get { return currentFolder; }
+    }
+
     private string cursor;
 
     public List<ConsoleProgram> programs; 
@@ -60,11 +66,16 @@ public class ConsoleEngine : MonoBehaviour
         }
     }
 
-    public void WriteToConsole(string output)
+    public void Write(string output)
     {
         app.Write(output);
     }
 
+    public void ChangeCurrentFolder(Folder f)
+    {
+        currentFolder = f;
+        UpdateCursor();
+    }
 
     public void UpdateCursor()
     {
